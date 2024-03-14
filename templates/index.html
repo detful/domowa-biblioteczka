@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <title>Domowa Biblioteczka</title>
+</head>
+<body>
+  <h1>Domowa Biblioteczka</h1>
+  <a href="/add">Dodaj nową książkę</a>
+  <ul>
+    {% for book in books %}
+      <li>{{ book.title }} by {{ book.author }} - <a href="{{ book.id }}/edit">Edytuj</a> | <form action="{{ book.id }}/delete" method="post"><button type="submit">Usuń</button></form></li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
